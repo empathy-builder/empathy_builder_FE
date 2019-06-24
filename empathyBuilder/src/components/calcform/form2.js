@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./form.css";
 
-export default class Form extends React.Component {
+export default class Form2 extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -15,9 +15,9 @@ export default class Form extends React.Component {
     return (
       <div className="expenseForm">
         <div className="totalGroup">
-          <h3>Calculate Personal Monthly Budget</h3>
+          <h3>Calculate Monthly Relocation Cost</h3>
           <form className="mainForm">
-            Transportation:{" "}
+            Total Hotel Cost/Home Rental Fee:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -25,7 +25,7 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Health Insurance:{" "}
+            Utility Conection Fees:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -33,7 +33,7 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Car Insurance:{" "}
+            Storage Unit:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -41,7 +41,7 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Main Loans:{" "}
+            Car Rental/Moving Services:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -49,7 +49,7 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Personal Loans:{" "}
+            Gas:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -57,15 +57,7 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Personal Loans:{" "}
-            <input
-              className="forms"
-              onChange={this.handleInputChange}
-              placeholder="Expense"
-              //value
-              name="price"
-            />
-            Personal Loans:{" "}
+            Additional Security Measures:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
