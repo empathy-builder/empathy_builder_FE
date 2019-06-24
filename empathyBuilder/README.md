@@ -7,6 +7,30 @@ MVP:
 *The relocation costs include: Daily hotel costs while in transit (if applicable, nightly rate * 30), new rental deposit, utility connection fees, storage unit, new monthly rent (if they already know this number), car rental and gas (if don't own a car), cell phone disconnection/connect fee (if they have to get a new number), moving truck rental, gas for moving truck, storage unit if unable to take their things with them, mental health treatment, income loss (what they are loosing by leaving their current job), cost of any additional security measures they must take
 *After they have entered these fields, a page will show up combining their total monthly expenses plus the monthly cost of relocation.
 
+2 steps to calculator:
+Title: Calculate Personal Monthly Budget
+Form spot for...
+    - Transportation
+    - Food
+    - Health Insurance
+    - Car Insurance
+    - Loans ie. student, car, home, etc
+    - Personal Loans
+    - miscellaneous
+
+Title: Monthly cost of relocation
+    - Daily Hotel costs
+    - new rental deposit
+    - utility connection fees
+    - storage unit
+    -car rental, moving services, gas, etc
+    - Additional security measures i.e. ...
+    - medication
+
+Next page:
+    Combination of the total monthly expenses + monthly cost of relocation
+
+
 Stakeholder contact info:
 amy.durrence@freefrom.org
 DESIGN LINKS / DATA SETS
