@@ -57,22 +57,6 @@ export default class Form extends React.Component {
               //value
               name="price"
             />
-            Personal Loans:{" "}
-            <input
-              className="forms"
-              onChange={this.handleInputChange}
-              placeholder="Expense"
-              //value
-              name="price"
-            />
-            Personal Loans:{" "}
-            <input
-              className="forms"
-              onChange={this.handleInputChange}
-              placeholder="Expense"
-              //value
-              name="price"
-            />
             Miscellaneous:{" "}
             <input
               className="forms"
