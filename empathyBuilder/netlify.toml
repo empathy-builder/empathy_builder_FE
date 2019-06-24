@@ -1,6 +1,6 @@
 [build]
  base = "empathyBuilder/"
- publish = "empathyBuilder/output/"
+ publish = "empathyBuilder/build/"
 
  [[redirects]]
   from = "/*"
