@@ -1,11 +1,8 @@
-//something to work with.
-// i.e. idea of how data will  flow
+import React from "react";
+import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
-import React from "./node_modules/react";
-import { connect } from "./node_modules/react-redux";
-import Loader from "./node_modules/react-loader-spinner";
-
-import { login } from "../actions";
+import { signup } from "../actions";
 
 class Login extends React.Component {
   state = {
@@ -69,5 +66,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { login }
+  { signup }
 )(Login);
