@@ -1,8 +1,0 @@
-[build]
- base = "empathyBuilder/"
- publish = "empathyBuilder/output/"
-
- [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200  
