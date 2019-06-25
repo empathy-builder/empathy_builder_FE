@@ -1,70 +1,79 @@
-import React from "react";
-import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
+// import React from "react";
+// import { connect } from "react-redux";
+// import Loader from "react-loader-spinner";
 
-import { signup } from "../actions";
+// import { signup } from "../actions";
 
-class Login extends React.Component {
-  state = {
-    credentials: {
-      username: "",
-      password: ""
-    }
-  };
+// export default class SignUp extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       username: "",
+//       password: ""
+//     };
+//   }
 
-  handleChange = e => {
-    this.setState({
-      credentials: {
-        ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
-    });
-  };
+//   //   handleChanges = e => {
+//   //       e.preventDefault();
+//   //       this.setState({ [e.target.name]: e.target.value })
+//   //   }
 
-  login = e => {
-    e.preventDefault();
-    this.props.login(this.state.credentials).then(res => {
-      if (res) {
-        this.props.history.push("/protected");
-      }
-    });
-  };
+//   //   signup = e => {
+//   //     e.preventDefault();
+//   //     const newUser = {
+//   //         username: this.state.username,
+//   //         password: this.state.password,
+//   //         role: this.state.role
+//   //     }
+//   //     this.props.signup(newUser);
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
-            type="text"
-            name="username"
-            value={this.state.credentials.username}
-            onChange={this.handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          <button>
-            {this.props.loggingIn ? (
-              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-            ) : (
-              "Log in"
-            )}
-          </button>
-        </form>
-      </div>
-    );
-  }
-}
+//   //     this.setState({
+//   //         username: '',
+//   //         password: '',
+//   //     })
+//   // }
 
-const mapStateToProps = state => ({
-  error: state.error,
-  loggingIn: state.loggingIn
-});
+//   render() {
+//     return <div className="pleaseWork">pleaseWork</div>;
+//   }
+// }
 
-export default connect(
-  mapStateToProps,
-  { signup }
-)(Login);
+// /*     return (
+//             <div className="signup">
+//                 <form onSubmit={this.signup} className="signupForm">
+//                     <header className="signupHeader"><h1>Join now!</h1></header>
+//                     <input
+//                         placeholder="Create a Username"
+//                         type="text"
+//                         name="username"
+//                         className="form-control"
+//                         value={this.state.username}
+//                         onChange={this.handleChanges}
+//                     />
+//                     <input
+//                         placeholder="Create a Password"
+//                         type="text"
+//                         name="password"
+//                         className="form-control"
+//                         value={this.state.password}
+//                         onChange={this.handleChanges}
+//                     />
+//                     <button className="btn btn-primary btn-lg">Sign Up</button>
+//                     <Link to="/login"><p className="redirectSignup">Already a member? Login here!</p></Link>
+//                 </form>
+//             </div>
+//     )*/
+
+// /*
+// const mapStateToProps = state => {
+//   return {
+//     addingUser: state.signup,
+//     error: state.error
+//   };
+// };
+
+// export default connect(
+//   mapStateToProps,
+//   { signup }
+// )(SignUp);
+// */
