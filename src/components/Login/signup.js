@@ -10,8 +10,7 @@
 //     this.state = {
 //       username: "",
 //       password: ""
-//     };
-//   }
+//     };//   }
 
 //   //   handleChanges = e => {
 //   //       e.preventDefault();
