@@ -7,6 +7,11 @@ import Info from "./components/calcform/info";
 import NavBar from "./components/nav/navbar";
 import SignUp from "./components/Login/signup";
 
+import LoginPage from "./components/pages/LoginPage";
+import SignUpPage from "./components/pages/SignUpPage";
+import Calculations from "./components/pages/Calculations";
+// import Calculations2 from "./components/pages/Calculations2";
+
 import "./App.css";
 
 function App() {
@@ -15,14 +20,17 @@ function App() {
       <div className="Nav">
         <NavBar />
       </div>
-      <route Path="/signup" component={SignUp} />
-      <div className="infoForm">
+      <Route path="/login" component={LoginPage} />
+      <Route path="/signup" component={SignUpPage} />
+      <Route exact path="/calc" component={Calculations} />
+      {/* <Route exact path="/calcResult" component={Calculations2} /> */}
+      {/* <div className="infoForm">
         <Info />
         <div className="appForms">
           <Form />
           <Form2 />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
