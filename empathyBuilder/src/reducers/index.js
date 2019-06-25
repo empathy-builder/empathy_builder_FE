@@ -1,50 +1,77 @@
-// more ideas
-
 import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
-  FETCH_DATA_START,
-  FETCH_DATA_SUCCESS,
-  FETCH_DATA_FAILURE
+  FETCH_MEMBER_START,
+  FETCH_MEMBER_SUCCESS,
+  FETCH_MEMBER_FAIL,
+  ADD_MEMBER_START,
+  ADD_MEMBER_SUCCESS,
+  ADD_MEMBER_FAIL
 } from "../actions";
 
-const initialState = {
-  error: "",
-  fetchingData: false,
-  loggingIn: false,
-  gasPrices: []
+const intitialState = {
+  users: [],
+  fetchingMember: false,
+  addingMember: false,
+  isLoggingIn: false,
+  error: null
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = intitialState, action) => {
   switch (action.type) {
     case LOGIN_START:
       return {
         ...state,
-        error: "",
-        loggingIn: true
+        isLoggingIn: true,
+        error: ""
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        loggingIn: false,
+        isLoggingIn: false,
         error: ""
       };
-    case FETCH_DATA_START:
+    case LOGIN_FAILURE:
       return {
         ...state,
-        error: "",
-        fetchingData: true
+        isLoggingIn: false,
+        error: action.payload
       };
-    case FETCH_DATA_SUCCESS:
+    case FETCH_MEMBER_START:
       return {
         ...state,
-        fetchingData: false
+        fetchingMember: true,
+        error: ""
       };
-    case FETCH_DATA_FAILURE:
+    case FETCH_MEMBER_SUCCESS:
       return {
         ...state,
-        fetchingData: false,
+        fetchingMember: false,
+        users: action.payload
+      };
+    case FETCH_MEMBER_FAIL:
+      return {
+        ...state,
+        fetchingUsers: false,
+        error: action.payload
+      };
+    case ADD_MEMBER_START:
+      return {
+        ...state,
+        addingMember: true,
+        error: ""
+      };
+    case ADD_MEMBER_SUCCESS:
+      return {
+        ...state,
+        addingMember: false,
+        users: action.payload
+      };
+    case ADD_MEMBER_FAIL:
+      return {
+        ...state,
+        addingMember: false,
         error: action.payload
       };
     default:

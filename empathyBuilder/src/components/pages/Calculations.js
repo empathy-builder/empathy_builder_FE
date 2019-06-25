@@ -15,7 +15,6 @@ export default function Calculations() {
         <Info />
         <div className="appForms">
           <Form />
-          <Form2 />
         </div>
       </div>
     </div>

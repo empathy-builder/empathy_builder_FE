@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-
+import { BrowserRouter as Link } from "react-router-dom";
 import { Button } from "reactstrap";
+import { connect } from "react-redux";
+
+import addMember from "../../actions/index";
+
+import "./signup.css";
 
 // import { signup } from "../../actions/signup";
 
 export default class SignUp extends React.Component {
   state = {
     credentials: {
-      username: "",
+      email: "",
       password: ""
     }
   };
@@ -21,35 +26,46 @@ export default class SignUp extends React.Component {
     });
   };
 
-  signup = e => {
-    e.preventDefault();
+  submitHandler = () => {
+    this.props.addMember(this.state);
   };
+
+  // addMember = event => {
+  //   event.preventDefault();
+  //   const newMember = {
+  //     username: this.state.username,
+  //     password: this.state.password
+  //   };
+  //   this.props.addUser(newMember);
+
+  //   this.setState({
+  //     username: "",
+  //     password: ""
+  //   });
+  // };
 
   render() {
     return (
       <div className="signupForm">
         <form onSubmit={this.signup}>
           <input
-            placeholder="Name"
+            placeholder="Email"
             type="text"
-            name="username"
-            // value={this.state.credentials.username}
+            name="email"
+            value={this.state.credentials.email}
             onChange={this.handleChange}
+            className="formInput"
           />
           <input
             placeholder="Password"
             type="password"
             name="password"
-            // value={this.state.credentials.password}
+            value={this.state.credentials.password}
             onChange={this.handleChange}
+            className="formInput"
           />
-          <Button color="primary">
+          <Button onClick={this.submitHandler} color="primary">
             Sign Up
-            {/* {this.props.loggingIn ? (
-              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-            ) : (
-              "Log in"
-            )} */}
           </Button>
         </form>
       </div>
