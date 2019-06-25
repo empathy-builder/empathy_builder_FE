@@ -1,6 +1,6 @@
 [build]
-base = "empathyBuilder/"
-publish = "empathyBuilder/build/"
+base = "./empathyBuilder"
+publish = "./build/"
 command = "yarn build"
 
 [[redirects]]

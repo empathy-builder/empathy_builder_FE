@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "reactstrap";
 import "./form.css";
 
 export default class Form extends React.Component {
@@ -66,9 +67,9 @@ export default class Form extends React.Component {
               name="price"
             />
           </form>
-          <button type="submit" className="button">
+          <Button type="submit" className="button" color="info">
             Calculate
-          </button>
+          </Button>
         </div>
       </div>
     );
