@@ -5,7 +5,7 @@ class SignUpPage extends React.Component {
   render() {
     return (
       <div className="signupPage">
-        <h1>Please Sign Up</h1>
+        <h1>Sign Up Here</h1>
         <SignUp />
       </div>
     );

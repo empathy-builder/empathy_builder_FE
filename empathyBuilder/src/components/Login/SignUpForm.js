@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import { BrowserRouter as Link } from "react-router-dom";
 import { Button } from "reactstrap";
+import "./signup.css";
 
 // import { signup } from "../../actions/signup";
 
@@ -35,6 +36,7 @@ export default class SignUp extends React.Component {
             name="username"
             // value={this.state.credentials.username}
             onChange={this.handleChange}
+            className="formInput"
           />
           <input
             placeholder="Password"
@@ -42,6 +44,7 @@ export default class SignUp extends React.Component {
             name="password"
             // value={this.state.credentials.password}
             onChange={this.handleChange}
+            className="formInput"
           />
           <Button color="primary">
             Sign Up
@@ -51,6 +54,9 @@ export default class SignUp extends React.Component {
               "Log in"
             )} */}
           </Button>
+          {/* <Link to="/login">
+            <p className="already">Have an account? Login here.</p>
+          </Link> */}
         </form>
       </div>
     );
