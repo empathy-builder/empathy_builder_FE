@@ -39,13 +39,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        fetchingData: false,
-        gasPrices: action.payload
-          .filter(price => price.type === "Gasoline - Regular")
-          .filter(
-            price =>
-              price.location === "US" || price.location === "State of Hawaii"
-          )
+        fetchingData: false
       };
     case FETCH_DATA_FAILURE:
       return {

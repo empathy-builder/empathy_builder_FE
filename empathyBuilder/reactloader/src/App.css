@@ -1,8 +1,5 @@
 .App {
   text-align: center;
-  /* width: 1000px; */
-  margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .App-logo {
@@ -24,13 +21,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.infoForm {
-  display: flex;
-  flex-direction: row;
-  margin-left: 7%;
-  margin-right: 7%;
 }
 
 @keyframes App-logo-spin {
