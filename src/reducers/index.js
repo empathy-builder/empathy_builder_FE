@@ -5,7 +5,9 @@ import {
   
   const initialState = {
       loggingIn: false,
+      loggedIn: false,
       registering: false,
+      registered: false,
       user: null,
       error: '',
       message: ''
@@ -54,6 +56,7 @@ import {
               return {
                   ...state,
                   registering: false,
+                  registered: true,
                   message: '',
                   error: ''
               }

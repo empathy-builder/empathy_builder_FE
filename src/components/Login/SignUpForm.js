@@ -28,6 +28,7 @@ class SignUpForm extends React.Component {
     render(){
         return (
             <>
+            {this.props.registered && this.props.history.push('/restricted')}
                 <form onSubmit={this.register}>
                     <input 
                         type="text"
@@ -54,6 +55,7 @@ class SignUpForm extends React.Component {
 
 const mapStateToProps = state => ({
     registering: state.registering,
+    registered: state.registered
 })
 
 export default connect(

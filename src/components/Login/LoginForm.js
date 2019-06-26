@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
     render(){
         return (
             <>
-            {this.props.loggedIn && this.props.history.push('/')}
+            {this.props.loggedIn && this.props.history.push('/restricted')}
                 <form onSubmit={this.login}>
                     Username
                     <input 

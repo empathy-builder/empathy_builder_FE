@@ -1,4 +1,5 @@
 import axios from 'axios'
+import axiosWithAuth from './axiosWithAuth'
 
 export const REGISTER_START = 'REGISTER_START'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
@@ -11,11 +12,10 @@ export const register = creds => dispatch => {
         .post('https://empathy-builder.herokuapp.com/api/auth/register', creds)
         .then(res => {
             console.log(res)
-            // localStorage.setItem('token', res.data.payload)
-            // dispatch({
-            //     type: REGISTER_SUCCESS, 
-            //     payload: res.data.payload
-            // })
+            dispatch({
+                type: REGISTER_SUCCESS, 
+                payload: res.data.payload
+            })
         })
         .catch((err) => {
             console.log(err.response.data)
@@ -56,3 +56,30 @@ export const login = creds => dispatch => {
         })
 }
 
+export const GET_DATA_START = 'GET_DATA_START'
+export const GET_DATA_ERROR = 'GET_DATA_ERROR'
+export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
+
+export const getData  = dispatch => {
+    dispatch({ type: GET_DATA_START })
+    
+    axiosWithAuth()
+        .get(`https://empathy-builder.herokuapp.com/api/data/restricted`)
+        .then(res => {
+            console.log(res)
+            dispatch({
+                type: GET_DATA_SUCCESS, 
+                payload: {
+                    users: res.data.data,
+                    message: 'Data succesfully retrieved for your department.'
+                }
+            })
+        })
+        .catch((err) => {
+            console.log(err.response.data)
+            dispatch({
+                type: GET_DATA_ERROR,
+                payload: `${err.response.data.error}`
+            })
+        })
+}
