@@ -36,7 +36,7 @@ export default class LoginForm extends React.Component {
             name="password"
             // value={this.state.credentials.password}
             onChange={this.handleChange}
-          />
+          />{" "}
           <Button color="info">
             Login
             {/* {this.props.loggingIn ? (

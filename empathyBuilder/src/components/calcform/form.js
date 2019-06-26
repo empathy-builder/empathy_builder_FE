@@ -10,10 +10,12 @@ export default class Form extends React.Component {
       result: "",
       transport: "",
       health: "",
+      cc: "",
+      groceries: "",
       carIn: "",
-      mLoan: "",
       pLoan: "",
-      misc1: ""
+      pOther: "",
+      miscOne: ""
       // house: "",
       // util: "",
       // storage: "",
@@ -31,8 +33,10 @@ export default class Form extends React.Component {
     this.setState({
       result: eval(
         `${this.state.transport} + ${this.state.health} + ${
+          this.state.health
+        } + ${this.state.cc} + ${this.state.groceries} + ${
           this.state.carIn
-        } + ${this.state.mLoan} + ${this.state.pLoan} + ${this.state.misc1}`
+        } + ${this.state.pLoan} + ${this.state.pOther} + ${this.state.miscOne}`
       )
     });
   };
@@ -63,7 +67,7 @@ export default class Form extends React.Component {
               value={this.state.transport}
               name="transport"
             />
-            Health Insurance:{" "}
+            Health Care:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -71,21 +75,29 @@ export default class Form extends React.Component {
               value={this.state.health}
               name="health"
             />
-            Car Insurance:{" "}
+            Child Care:{" "}
+            <input
+              className="forms"
+              onChange={this.handleInputChange}
+              placeholder="Expense"
+              value={this.state.cc}
+              name="cc"
+            />
+            Groceries:{" "}
+            <input
+              className="forms"
+              onChange={this.handleInputChange}
+              placeholder="Expense"
+              value={this.state.groceries}
+              name="groceries"
+            />
+            Car Loans/Insurance:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
               value={this.state.carIn}
               name="carIn"
-            />
-            Main Loans:{" "}
-            <input
-              className="forms"
-              onChange={this.handleInputChange}
-              placeholder="Expense"
-              value={this.state.mLoan}
-              name="mLoan"
             />
             Personal Loans:{" "}
             <input
@@ -95,13 +107,21 @@ export default class Form extends React.Component {
               value={this.state.pLoan}
               name="pLoan"
             />
+            Personal Other:{" "}
+            <input
+              className="forms"
+              onChange={this.handleInputChange}
+              placeholder="Expense"
+              value={this.state.pOther}
+              name="pOther"
+            />
             Miscellaneous:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.misc1}
-              name="misc1"
+              value={this.state.miscOne}
+              name="miscOne"
             />
           </form>
           {/* <div className="totalGroup">
