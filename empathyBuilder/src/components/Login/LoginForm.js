@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
-          />
+          />{" "}
           <Button color="info">
           {this.props.loggingIn ? 
                                 this.props.error ? 

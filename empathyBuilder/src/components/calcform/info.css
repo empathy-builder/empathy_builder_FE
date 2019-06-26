@@ -1,29 +1,42 @@
-.info {
-  display: flex;
-  align-items: center;
-  margin-top: 5%;
-  justify-content: center;
-}
-
 .infoSection {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-left: 5%;
-  width: 45%;
-  /* border: 1px solid red; */
-}
-
-.tabs {
-  width: 82%;
-}
-
-.tabPortion {
-  width: 45%;
+  width: 50%;
 }
 
 .calculatorImage {
-  width: 75%;
+  width: 85%;
+}
+
+/* Calculations.js */
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+  justify-content: space-between;
+  width: 1200px;
+  padding-top: 5%;
+  /* width: 75%; */
+  /* border: 1px solid red; */
+  margin: auto;
+}
+
+.tabPortion {
+  width: 40%;
+  /* border: 1px solid green; */
+  /* margin: auto; */
+}
+
+.tabs {
+  width: 100%;
+  /* border: 2px solid yellow; */
+}
+
+.tabOne {
+  /* width: 100%; */
+  /* border: 1px solid brown; */
 }
 
 /*

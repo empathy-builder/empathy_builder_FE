@@ -28,6 +28,8 @@ export default class Form3 extends React.Component {
       util: "",
       storage: "",
       rental: "",
+      travelTwo: "",
+      cPhone: "",
       security: "",
       misc2: ""
     };
@@ -59,7 +61,7 @@ export default class Form3 extends React.Component {
         <div className="totalGroup">
           <h3>Calculate Monthly Relocation Cost</h3>
           <form className="mainForm">
-            Total Hotel Cost/Home Rental Fee:{" "}
+            Total Hotel Cost/Rental Deposit:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
@@ -83,13 +85,29 @@ export default class Form3 extends React.Component {
               value={this.state.storage}
               name="storage"
             />
-            Car Rental/Moving Services/Gas:{" "}
+            Car Rental/Moving Services:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
               value={this.state.rental}
               name="rental"
+            />
+            Travel Costs:{" "}
+            <input
+              className="forms"
+              onChange={this.handleInputChange}
+              placeholder="Expense"
+              value={this.state.travelTwo}
+              name="travelTwo"
+            />
+            Cell Phone:{" "}
+            <input
+              className="forms"
+              onChange={this.handleInputChange}
+              placeholder="Expense"
+              value={this.state.cPhone}
+              name="cPhone"
             />
             Security Measures:{" "}
             <input

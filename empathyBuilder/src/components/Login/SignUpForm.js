@@ -71,7 +71,7 @@ class SignUpForm extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
             className="formInput"
-          />
+          />{" "}
           <Button onClick={this.submitHandler} color="info">
             Sign Up
           </Button>
