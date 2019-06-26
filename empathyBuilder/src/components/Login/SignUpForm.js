@@ -3,14 +3,15 @@ import { BrowserRouter as Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import MCarousel from "../../components/calcform/carousel/carousel";
+import { withRouter } from 'react-router-dom'
 
-import addMember from "../../actions/index";
+import { register } from "../../actions";
 
 import "./signup.css";
 
 // import { signup } from "../../actions/signup";
 
-export default class SignUp extends React.Component {
+class SignUpForm extends React.Component {
   state = {
     credentials: {
       email: "",
@@ -27,8 +28,13 @@ export default class SignUp extends React.Component {
     });
   };
 
-  submitHandler = () => {
-    this.props.addMember(this.state);
+  submitHandler = e => {
+    e.preventDefault()
+    console.log(this.state.credentials)
+    this.props.register(this.state.credentials)
+        .then(() => {
+            this.props.history.push('/login')
+    })
   };
 
   // addMember = event => {
@@ -48,6 +54,7 @@ export default class SignUp extends React.Component {
   render() {
     return (
       <div className="signupForm">
+        {this.props.registered && this.props.history.push('/restricted')}
         <form onSubmit={this.signup}>
           <input
             placeholder="Email"
@@ -74,3 +81,14 @@ export default class SignUp extends React.Component {
     );
   }
 }
+
+
+const mapStateToProps = state => ({
+  registering: state.registering,
+  registered: state.registered
+})
+
+export default connect(
+  mapStateToProps,
+  { register }
+) (withRouter(SignUpForm))
