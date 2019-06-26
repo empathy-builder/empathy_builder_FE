@@ -22,7 +22,7 @@ function App() {
       </div>
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignUpPage} />
-      <Route exact path="/calc" component={Calculations} />
+      <Route exact path="/" component={Calculations} />
       {/* <Route exact path="/calcResult" component={Calculations2} /> */}
       {/* <div className="infoForm">
         <Info />

@@ -1,8 +1,12 @@
-.navbar-brand {
-  color: rgb(255, 255, 255);
-}
-
 .empathyBuilder {
   font-weight: bolder;
-  color: rgb(102, 102, 236);
+  color: white;
+}
+
+.navBar {
+  background: #403c57;
+}
+
+.navItem {
+  color: white;
 }

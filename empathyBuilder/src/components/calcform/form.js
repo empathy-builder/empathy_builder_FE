@@ -8,102 +8,102 @@ export default class Form extends React.Component {
     super();
     this.state = {
       result: "",
-      transportation: "",
-      healthInsurance: "",
-      carInsurance: ""
+      transport: "",
+      health: "",
+      carIn: "",
+      mLoan: "",
+      pLoan: "",
+      misc1: ""
+      // house: "",
+      // util: "",
+      // storage: "",
+      // rental: "",
+      // security: "",
+      // misc2: ""
     };
   }
-
-  onClick = button => {
-    if (button === "button") {
-      this.calculate();
-    } else {
-      this.setState({
-        result: this.state.result + button
-      });
-    }
-  };
-
-  calculate = () => {
-    var checkResult = "";
-    if (this.state.result.includes("--")) {
-      checkResult = this.state.result.replace("--", "+");
-    } else {
-      checkResult = this.state.result;
-    }
-
-    try {
-      this.setState({
-        // eslint-disable-next-line
-        result: (eval(checkResult) || "") + ""
-      });
-    } catch (e) {
-      this.setState({
-        result: "error"
-      });
-    }
-  };
 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  sum = () => {
+    this.setState({
+      result: eval(
+        `${this.state.transport} + ${this.state.health} + ${
+          this.state.carIn
+        } + ${this.state.mLoan} + ${this.state.pLoan} + ${this.state.misc1}`
+      )
+    });
+  };
+
+  clear = () => {
+    this.setState({
+      result: ""
+    });
+  };
+
+  // + ${
+  //   this.state.house
+  //   } + ${this.state.util} + ${this.state.storage} + ${
+  //   this.state.rental
+  //   } + ${this.state.security} + ${this.state.misc2}
+
   render() {
     return (
       <div className="expenseForm">
         <div className="totalGroup">
-          <h3>Calculate Personal Monthly Budget</h3>
           <form className="mainForm">
             Transportation:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              // value={this.state.transporatation}
-              name="price"
+              value={this.state.transport}
+              name="transport"
             />
             Health Insurance:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              // value={this.state.healthInsurance}
-              name="price"
+              value={this.state.health}
+              name="health"
             />
             Car Insurance:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.carInsurance}
-              name="price"
+              value={this.state.carIn}
+              name="carIn"
             />
             Main Loans:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              //value
-              name="price"
+              value={this.state.mLoan}
+              name="mLoan"
             />
             Personal Loans:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              //value
-              name="price"
+              value={this.state.pLoan}
+              name="pLoan"
             />
             Miscellaneous:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              //value
-              name="price"
+              value={this.state.misc1}
+              name="misc1"
             />
           </form>
-          <div className="totalGroup">
+          {/* <div className="totalGroup">
             <h3>Calculate Monthly Relocation Cost</h3>
             <form className="mainForm">
               Total Hotel Cost/Home Rental Fee:{" "}
@@ -111,65 +111,59 @@ export default class Form extends React.Component {
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.house}
+                name="house"
               />
               Utility Conection Fees:{" "}
               <input
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.util}
+                name="util"
               />
               Storage Unit:{" "}
               <input
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.storage}
+                name="storage"
               />
-              Car Rental/Moving Services:{" "}
+              Car Rental/Moving Services/Gas:{" "}
               <input
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.rental}
+                name="rental"
               />
-              Gas:{" "}
+              Security Measures:{" "}
               <input
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
-              />
-              Additional Security Measures:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.security}
+                name="security"
               />
               Miscellaneous:{" "}
               <input
                 className="forms"
                 onChange={this.handleInputChange}
                 placeholder="Expense"
-                //value
-                name="price"
+                value={this.state.misc2}
+                name="misc2"
               />
-            </form>
-            <Button type="submit" className="button" color="info">
-              Calculate
-            </Button>
-            <button type="onClick" />
-            <Calculation result={this.state.result} />
-          </div>
+            </form> */}
+          <Button onClick={this.sum} type="submit" className="button">
+            Calculate
+          </Button>
+          <Button onClick={this.clear} type="submit" className="button">
+            Clear
+          </Button>
+          <Calculation result={this.state.result} />
         </div>
+        {/* </div> */}
       </div>
     );
   }
