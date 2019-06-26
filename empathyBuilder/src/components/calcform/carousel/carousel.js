@@ -11,6 +11,8 @@ import community from "./png/community.png";
 import smile from "./png/smile.png";
 import people from "./png/people.png";
 
+import "./carousel.css";
+
 const items = [
   {
     src: community

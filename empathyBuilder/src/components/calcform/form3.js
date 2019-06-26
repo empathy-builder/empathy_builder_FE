@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Calculation from "./form2";
-import Demo from "./popup";
 
 //reactstrap
 import {

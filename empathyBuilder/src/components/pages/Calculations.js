@@ -22,7 +22,6 @@ import Form3 from "../calcform/form3";
 import Info from "../calcform/info";
 import NavBar from "../nav/navbar";
 import SignUp from "../Login/signup";
-import Demo from "../calcform/popup";
 
 import "../../App.css";
 import "../calcform/info.css";
