@@ -22,6 +22,7 @@ import Form3 from "../calcform/form3";
 import Info from "../calcform/info";
 import NavBar from "../nav/navbar";
 import SignUp from "../Login/signup";
+import Demo from "../calcform/popup";
 
 import "../../App.css";
 import "../calcform/info.css";
@@ -64,6 +65,7 @@ export default class Calculations extends React.Component {
       <div>
         <div className="info">
           <Info />
+
           <div className="tabPortion">
             <Nav className="tabs" tabs>
               <NavItem>

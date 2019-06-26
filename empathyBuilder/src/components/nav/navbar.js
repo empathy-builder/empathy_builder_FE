@@ -27,7 +27,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className="navBar" color="faded" light expand="md">
+        <Navbar className="navBar navbar-dark" color="faded" light expand="md ">
           <NavbarBrand href="/" className="empathyBuilder">
             Empathy Builder
           </NavbarBrand>

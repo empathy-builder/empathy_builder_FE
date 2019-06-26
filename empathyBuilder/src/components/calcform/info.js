@@ -12,10 +12,15 @@ export default function Info() {
         style={calculator.png}
         alt="whatever"
       />
-      <h1> Information Title</h1>
+      <h1>Personal Budgeting</h1>
       <p>
-        Paragraph of information lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-        lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        When it comes to sudden relocation during a hectic time, finance
+        planning takes a backseat. This can cause more uneeded headaches to pile
+        up.
+      </p>{" "}
+      <p>
+        Calculate your expenses before taking that next step in order to fully
+        prepare yourself for the future.
       </p>
     </div>
   );

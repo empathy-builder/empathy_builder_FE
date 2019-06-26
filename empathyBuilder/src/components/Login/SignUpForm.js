@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
+import MCarousel from "../../components/calcform/carousel/carousel";
 
 import addMember from "../../actions/index";
 
@@ -55,7 +56,7 @@ export default class SignUp extends React.Component {
             value={this.state.credentials.email}
             onChange={this.handleChange}
             className="formInput"
-          />
+          />{" "}
           <input
             placeholder="Password"
             type="password"
@@ -64,10 +65,11 @@ export default class SignUp extends React.Component {
             onChange={this.handleChange}
             className="formInput"
           />
-          <Button onClick={this.submitHandler} color="primary">
+          <Button onClick={this.submitHandler} color="info">
             Sign Up
           </Button>
         </form>
+        <MCarousel />
       </div>
     );
   }
