@@ -6,8 +6,7 @@ export default class Calculation extends Component {
     let { result } = this.props;
     return (
       <div className="result">
-        <h2>Total:</h2>
-        <h3>{"$" + result}</h3>
+        <h2>Total {`$` + result}</h2>
       </div>
     );
   }

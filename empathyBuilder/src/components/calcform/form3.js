@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Calculation from "./form2";
+import Demo from "./popup";
 
 //reactstrap
 import {
@@ -108,10 +109,20 @@ export default class Form3 extends React.Component {
               name="misc2"
             />
           </form>
-          <Button onClick={this.sum} type="submit" className="button">
+          <Button
+            color="info"
+            onClick={this.sum}
+            type="submit"
+            className="button"
+          >
             Calculate
           </Button>{" "}
-          <Button onClick={this.clear} type="submit" className="button">
+          <Button
+            color="info"
+            onClick={this.clear}
+            type="submit"
+            className="button"
+          >
             Clear
           </Button>
           <Calculation result={this.state.result} />

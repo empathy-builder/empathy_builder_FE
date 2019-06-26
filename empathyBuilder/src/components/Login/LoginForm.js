@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Button } from "reactstrap";
-
+import MCarousel from "../../components/calcform/carousel/carousel";
 import "./signup.css";
 
 export default class LoginForm extends React.Component {
@@ -29,7 +29,7 @@ export default class LoginForm extends React.Component {
             name="username"
             // value={this.state.credentials.username}
             onChange={this.handleChange}
-          />
+          />{" "}
           <input
             placeholder="Password"
             type="password"
@@ -37,7 +37,7 @@ export default class LoginForm extends React.Component {
             // value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <Button color="primary">
+          <Button color="info">
             Login
             {/* {this.props.loggingIn ? (
               <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
@@ -46,6 +46,7 @@ export default class LoginForm extends React.Component {
             )} */}
           </Button>
         </form>
+        <MCarousel />
       </div>
     );
   }
