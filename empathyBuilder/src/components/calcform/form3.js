@@ -57,6 +57,7 @@ export default class Form3 extends React.Component {
     return (
       <div className="expenseForm">
         <div className="totalGroup">
+          <h3>Calculate Monthly Relocation Cost</h3>
           <form className="mainForm">
             Total Hotel Cost/Home Rental Fee:{" "}
             <input
@@ -109,7 +110,7 @@ export default class Form3 extends React.Component {
           </form>
           <Button onClick={this.sum} type="submit" className="button">
             Calculate
-          </Button>
+          </Button>{" "}
           <Button onClick={this.clear} type="submit" className="button">
             Clear
           </Button>
