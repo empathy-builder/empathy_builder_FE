@@ -4,7 +4,6 @@
 import React, { Component } from "react";
 import { connect } from "./node_modules/react-redux";
 import Loader from "./node_modules/react-loader-spinner";
-import MCarousel from "../calcform/carousel/carousel";
 
 // import { login } from "../../actions/login";
 
@@ -58,8 +57,6 @@ class Login extends React.Component {
             )}
           </button>
         </form>
-        Carousel here;
-        <MCarousel />
       </div>
     );
   }
