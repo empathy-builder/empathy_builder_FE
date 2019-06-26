@@ -75,7 +75,7 @@ export default class Calculations extends React.Component {
                     this.toggle("1");
                   }}
                 >
-                  Calculate Personal Monthly Budget
+                  Step One
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -87,7 +87,7 @@ export default class Calculations extends React.Component {
                     this.toggle("2");
                   }}
                 >
-                  Calculate Monthly Relocation Cost
+                  Step Two
                 </NavLink>
               </NavItem>
             </Nav>
@@ -101,7 +101,7 @@ export default class Calculations extends React.Component {
               </TabPane>
               <TabPane tabId="2">
                 <Row>
-                  <Col sm="5">
+                  <Col className="tabTwo" sm="5">
                     <Form3 />
                   </Col>
                 </Row>
