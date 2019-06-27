@@ -49,9 +49,10 @@ export const login = creds => dispatch => {
             })
         })
         .catch((err) => {
+            console.log(err.response.data)
             dispatch({
                 type: LOGIN_ERROR,
-                payload: 'Error'
+                payload: `${err.response.data.message}`
             })
         })
 }

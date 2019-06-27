@@ -55,6 +55,7 @@ class LoginForm extends React.Component {
                         }
           </Button>
         </form>
+        <p style={{height: '5vh'}}>{this.props.error && this.props.error}</p>
         <MCarousel />
       </div>
     );
