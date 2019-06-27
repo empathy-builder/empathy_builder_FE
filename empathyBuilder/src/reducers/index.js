@@ -25,14 +25,14 @@ import {
           case LOGIN_ERROR:
               return {
                   ...state,
-                  logginIn: false,
+                  loggingIn: false,
                   message: '',
                   error: action.payload
               }
           case LOGIN_SUCCESS:
               return {
                   ...state,
-                  logginIn: false,
+                  loggingIn: false,
                   loggedIn: true,
                   user: action.payload.user,
                   message: action.payload.message,

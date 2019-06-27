@@ -11,6 +11,7 @@ import LoginPage from "./components/pages/LoginPage";
 import SignUpPage from "./components/pages/SignUpPage";
 import Calculations from "./components/pages/Calculations";
 import Restricted from "./components/pages/Restricted";
+import PrivateRoute from './PrivateRoute'
 // import Calculations2 from "./components/pages/Calculations2";
 
 import "./App.css";
@@ -24,7 +25,7 @@ function App() {
       <Route path="/login" component={LoginPage} />
       <Route path="/signup" component={SignUpPage} />
       <Route exact path="/" component={Calculations} />
-      <Route exact path="/restricted" component={Restricted} />
+      <PrivateRoute exact path="/restricted" component={Restricted} />
       {/* <Route exact path="/calcResult" component={Calculations2} /> */}
       {/* <div className="infoForm">
         <Info />

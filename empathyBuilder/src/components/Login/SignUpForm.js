@@ -32,9 +32,6 @@ class SignUpForm extends React.Component {
     e.preventDefault()
     console.log(this.state.credentials)
     this.props.register(this.state.credentials)
-        .then(() => {
-            this.props.history.push('/login')
-    })
   };
 
   // addMember = event => {
@@ -52,6 +49,7 @@ class SignUpForm extends React.Component {
   // };
 
   render() {
+    console.log(this.props.registered)
     return (
       <div className="signupForm">
         {this.props.registered && this.props.history.push('/restricted')}
@@ -73,9 +71,10 @@ class SignUpForm extends React.Component {
             className="formInput"
           />{" "}
           <Button onClick={this.submitHandler} color="info">
-            Sign Up
+            {this.props.registering ? "Signing up..." : "Sign Up"}
           </Button>
         </form>
+        <p style={{height: "5vh"}}>{this.props.error && this.props.error === '23505' ? "Username is taken. Try logging in"  : "Unable to register. Please try again."}</p>
         <MCarousel />
       </div>
     );
@@ -85,7 +84,8 @@ class SignUpForm extends React.Component {
 
 const mapStateToProps = state => ({
   registering: state.registering,
-  registered: state.registered
+  registered: state.registered,
+  error: state.error
 })
 
 export default connect(

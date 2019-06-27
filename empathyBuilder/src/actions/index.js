@@ -21,7 +21,7 @@ export const register = creds => dispatch => {
             console.log(err.response.data)
             dispatch({
                 type: REGISTER_ERROR,
-                payload: `${err.response.data.error}`
+                payload: `${err.response.data.errorMessage || err.response.data.code}`
             })
         })
 }
