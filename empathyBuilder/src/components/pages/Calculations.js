@@ -26,22 +26,6 @@ import SignUp from "../Login/signup";
 import "../../App.css";
 import "../calcform/info.css";
 
-// export default function Calculations() {
-//   return (
-//     <div className="App">
-//       <div className="info">
-//         <div className="infoForm">
-//           <Info />
-//           <div className="appForms">
-//             <Form />
-//             <Form3 />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 export default class Calculations extends React.Component {
   constructor(props) {
     super(props);

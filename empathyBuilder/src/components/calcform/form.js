@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import Calculation from "./form2";
 import "./form.css";
+import Modal from "./modal";
 
 export default class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      result: "",
+      resultOne: "",
       transport: "",
       health: "",
       cc: "",
@@ -16,12 +17,6 @@ export default class Form extends React.Component {
       pLoan: "",
       pOther: "",
       miscOne: ""
-      // house: "",
-      // util: "",
-      // storage: "",
-      // rental: "",
-      // security: "",
-      // misc2: ""
     };
   }
 
@@ -31,27 +26,21 @@ export default class Form extends React.Component {
 
   sum = () => {
     this.setState({
-      result: eval(
-        `${this.state.transport} + ${this.state.health} + ${
-          this.state.health
-        } + ${this.state.cc} + ${this.state.groceries} + ${
-          this.state.carIn
-        } + ${this.state.pLoan} + ${this.state.pOther} + ${this.state.miscOne}`
+      resultOne: eval(
+        `${this.state.transport} + ${this.state.health} + ${this.state.cc} + ${
+          this.state.groceries
+        } + ${this.state.carIn} + ${this.state.pLoan} + ${
+          this.state.pOther
+        } + ${this.state.miscOne}`
       )
     });
   };
 
   clear = () => {
     this.setState({
-      result: ""
+      resultOne: ""
     });
   };
-
-  // + ${
-  //   this.state.house
-  //   } + ${this.state.util} + ${this.state.storage} + ${
-  //   this.state.rental
-  //   } + ${this.state.security} + ${this.state.misc2}
 
   render() {
     return (
@@ -124,58 +113,6 @@ export default class Form extends React.Component {
               name="miscOne"
             />
           </form>
-          {/* <div className="totalGroup">
-            <h3>Calculate Monthly Relocation Cost</h3>
-            <form className="mainForm">
-              Total Hotel Cost/Home Rental Fee:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.house}
-                name="house"
-              />
-              Utility Conection Fees:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.util}
-                name="util"
-              />
-              Storage Unit:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.storage}
-                name="storage"
-              />
-              Car Rental/Moving Services/Gas:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.rental}
-                name="rental"
-              />
-              Security Measures:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.security}
-                name="security"
-              />
-              Miscellaneous:{" "}
-              <input
-                className="forms"
-                onChange={this.handleInputChange}
-                placeholder="Expense"
-                value={this.state.misc2}
-                name="misc2"
-              />
-            </form> */}
           <Button
             color="info"
             onClick={this.sum}
@@ -192,9 +129,8 @@ export default class Form extends React.Component {
           >
             Clear
           </Button>
-          <Calculation result={this.state.result} />
+          <Calculation resultOne={this.state.resultOne} />
         </div>
-        {/* </div> */}
       </div>
     );
   }

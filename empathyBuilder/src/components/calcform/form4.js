@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./form.css";
 
-export default class Calculation extends Component {
+export default class CalculationTwo extends Component {
   render() {
-    let { resultOne } = this.props;
+    let { resultTwo } = this.props;
     return (
       <div className="result">
-        <h2>Total {`$` + resultOne}</h2>
+        <h2>Total {`$` + resultTwo}</h2>
       </div>
     );
   }

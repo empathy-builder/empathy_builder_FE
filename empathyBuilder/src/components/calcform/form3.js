@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Calculation from "./form2";
+import Modal from "./modal";
+import CalculationTwo from "./form4";
 
 //reactstrap
 import {
@@ -23,7 +25,7 @@ export default class Form3 extends React.Component {
   constructor() {
     super();
     this.state = {
-      result: "",
+      resultTwo: "",
       house: "",
       util: "",
       storage: "",
@@ -41,17 +43,19 @@ export default class Form3 extends React.Component {
 
   sum = () => {
     this.setState({
-      result: eval(
+      resultTwo: eval(
         `${this.state.house} + ${this.state.util} + ${this.state.storage} + ${
           this.state.rental
-        } + ${this.state.security} + ${this.state.misc2}`
+        } + ${this.state.cPhone} + ${this.state.travelTwo} + ${
+          this.state.security
+        } + ${this.state.misc2}`
       )
     });
   };
 
   clear = () => {
     this.setState({
-      result: ""
+      resultTwo: ""
     });
   };
 
@@ -142,7 +146,7 @@ export default class Form3 extends React.Component {
           >
             Clear
           </Button>
-          <Calculation result={this.state.result} />
+          <CalculationTwo resultTwo={this.state.resultTwo} />
         </div>
       </div>
     );
