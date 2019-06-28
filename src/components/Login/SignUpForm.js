@@ -1,15 +1,12 @@
-import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import React from "react";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
-import MCarousel from "../../components/calcform/carousel/carousel";
+import MCarousel from "../carousel/carousel";
 import { withRouter } from 'react-router-dom'
 
 import { register } from "../../actions";
 
 import "./signup.css";
-
-// import { signup } from "../../actions/signup";
 
 class SignUpForm extends React.Component {
   state = {
@@ -33,20 +30,6 @@ class SignUpForm extends React.Component {
     console.log(this.state.credentials)
     this.props.register(this.state.credentials)
   };
-
-  // addMember = event => {
-  //   event.preventDefault();
-  //   const newMember = {
-  //     username: this.state.username,
-  //     password: this.state.password
-  //   };
-  //   this.props.addUser(newMember);
-
-  //   this.setState({
-  //     username: "",
-  //     password: ""
-  //   });
-  // };
 
   render() {
     console.log(this.props.registered)

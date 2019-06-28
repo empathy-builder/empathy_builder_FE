@@ -1,38 +1,22 @@
-import React, { Component } from "react";
-import Calculation from "./form2";
-
-//reactstrap
-import {
-  TabContent,
-  TabPane,
-  Nav,
-  NavItem,
-  NavLink,
-  Card,
-  Button,
-  CardTitle,
-  CardText,
-  Row,
-  Col
-} from "reactstrap";
-import classnames from "classnames";
-
+import React from "react";
+import { Button } from "reactstrap";
+import Calculation from "./DataCollectionForm";
 import "./form.css";
 
-export default class Form3 extends React.Component {
+export default class PersonalBudgetForm extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       result: "",
-      house: "",
-      util: "",
-      storage: "",
-      rental: "",
-      travelTwo: "",
-      cPhone: "",
-      security: "",
-      misc2: ""
-    };
+      transport: "",
+      health: "",
+      cc: "",
+      groceries: "",
+      carIn: "",
+      pLoan: "",
+      pOther: "",
+      miscOne: ""
+    }
   }
 
   handleInputChange = e => {
@@ -42,9 +26,11 @@ export default class Form3 extends React.Component {
   sum = () => {
     this.setState({
       result: eval(
-        `${this.state.house} + ${this.state.util} + ${this.state.storage} + ${
-          this.state.rental
-        } + ${this.state.security} + ${this.state.misc2}`
+        `${this.state.transport} + ${this.state.health} + ${
+          this.state.health
+        } + ${this.state.cc} + ${this.state.groceries} + ${
+          this.state.carIn
+        } + ${this.state.pLoan} + ${this.state.pOther} + ${this.state.miscOne}`
       )
     });
   };
@@ -59,71 +45,71 @@ export default class Form3 extends React.Component {
     return (
       <div className="expenseForm">
         <div className="totalGroup">
-          <h3>Calculate Monthly Relocation Cost</h3>
+          <h3>Calculate Personal Monthly Budget</h3>
           <form className="mainForm">
-            Total Hotel Cost/Rental Deposit:{" "}
+            Transportation:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.house}
-              name="house"
+              value={this.state.transport}
+              name="transport"
             />
-            Utility Conection Fees:{" "}
+            Health Care:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.util}
-              name="util"
+              value={this.state.health}
+              name="health"
             />
-            Storage Unit:{" "}
+            Child Care:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.storage}
-              name="storage"
+              value={this.state.cc}
+              name="cc"
             />
-            Car Rental/Moving Services:{" "}
+            Groceries:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.rental}
-              name="rental"
+              value={this.state.groceries}
+              name="groceries"
             />
-            Travel Costs:{" "}
+            Car Loans/Insurance:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.travelTwo}
-              name="travelTwo"
+              value={this.state.carIn}
+              name="carIn"
             />
-            Cell Phone:{" "}
+            Personal Loans:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.cPhone}
-              name="cPhone"
+              value={this.state.pLoan}
+              name="pLoan"
             />
-            Security Measures:{" "}
+            Personal Other:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.security}
-              name="security"
+              value={this.state.pOther}
+              name="pOther"
             />
             Miscellaneous:{" "}
             <input
               className="forms"
               onChange={this.handleInputChange}
               placeholder="Expense"
-              value={this.state.misc2}
-              name="misc2"
+              value={this.state.miscOne}
+              name="miscOne"
             />
           </form>
           <Button

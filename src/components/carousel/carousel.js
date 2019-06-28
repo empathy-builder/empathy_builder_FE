@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Carousel,
   CarouselItem,
@@ -25,7 +25,7 @@ const items = [
   }
 ];
 
-class MCarousel extends Component {
+class MCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };

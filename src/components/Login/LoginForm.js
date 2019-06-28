@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from 'react-redux'
 import { login } from '../../actions'
 import { withRouter } from 'react-router-dom'
 import { Button } from "reactstrap";
-import MCarousel from "../../components/calcform/carousel/carousel";
+import MCarousel from "../carousel/carousel";
 import "./signup.css";
 
 class LoginForm extends React.Component {
