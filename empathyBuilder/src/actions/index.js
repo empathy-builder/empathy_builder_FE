@@ -61,26 +61,23 @@ export const GET_DATA_START = 'GET_DATA_START'
 export const GET_DATA_ERROR = 'GET_DATA_ERROR'
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
 
-export const getData  = dispatch => {
+export const getData = () => dispatch => {
     dispatch({ type: GET_DATA_START })
     
     axiosWithAuth()
-        .get(`https://empathy-builder.herokuapp.com/api/data/restricted`)
+        .get(`https://empathy-builder.herokuapp.com/api/data`)
         .then(res => {
-            console.log(res)
+            console.log(res.data)
             dispatch({
                 type: GET_DATA_SUCCESS, 
-                payload: {
-                    users: res.data.data,
-                    message: 'Data succesfully retrieved for your department.'
-                }
+                payload: res.data
             })
         })
         .catch((err) => {
-            console.log(err.response.data)
+            console.log(err)
             dispatch({
                 type: GET_DATA_ERROR,
-                payload: `${err.response.data.error}`
+                payload: "error"
             })
         })
 }

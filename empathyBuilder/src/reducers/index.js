@@ -1,6 +1,7 @@
 import { 
   LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
   REGISTER_START, REGISTER_SUCCESS, REGISTER_ERROR,
+  GET_DATA_START,GET_DATA_SUCCESS,GET_DATA_ERROR,
   } from '../actions/'
   
   const initialState = {
@@ -8,7 +9,9 @@ import {
       loggedIn: false,
       registering: false,
       registered: false,
+      fetchingData: false,
       user: null,
+      data: null,
       error: '',
       message: ''
   }
@@ -57,6 +60,28 @@ import {
                   ...state,
                   registering: false,
                   registered: true,
+                  message: '',
+                  error: ''
+              }
+            case GET_DATA_START:
+              return {
+                  ...state,
+                  fetchingData: true,
+                  message: '',
+                  error: ''
+              }
+          case GET_DATA_ERROR:
+              return {
+                  ...state,
+                  fetchingData: false,
+                  message: '',
+                  error: action.payload
+              }
+          case GET_DATA_SUCCESS:
+              return {
+                  ...state,
+                  fetchingData: false,
+                  data: action.payload,
                   message: '',
                   error: ''
               }
